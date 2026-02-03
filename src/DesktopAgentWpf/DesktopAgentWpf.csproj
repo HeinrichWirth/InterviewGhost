@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseSystemDrawing>true</UseSystemDrawing>
+    <AssemblyName>InterviewGhost</AssemblyName>
+    <AssemblyTitle>InterviewGhost</AssemblyTitle>
+    <Product>InterviewGhost</Product>
+    <FileDescription>InterviewGhost</FileDescription>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <Win32Icon>Assets\app.ico</Win32Icon>
+    <AutoVersionDay>$([System.DateTime]::UtcNow.DayOfYear)</AutoVersionDay>
+    <AutoVersionMinute>$([MSBuild]::Add($([MSBuild]::Multiply($([System.DateTime]::UtcNow.Hour), 60)), $([System.DateTime]::UtcNow.Minute)))</AutoVersionMinute>
+    <Version>1.0.$(AutoVersionDay).$(AutoVersionMinute)</Version>
+    <AssemblyVersion>1.0.$(AutoVersionDay).0</AssemblyVersion>
+    <FileVersion>1.0.$(AutoVersionDay).$(AutoVersionMinute)</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    <PackageReference Include="NAudio.Wasapi" Version="2.2.1" />
+    <PackageReference Include="QRCoder" Version="1.4.3" />
+    <PackageReference Include="SharpDX" Version="4.2.0" />
+    <PackageReference Include="SharpDX.Direct3D11" Version="4.2.0" />
+    <PackageReference Include="SharpDX.DXGI" Version="4.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\app.ico" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

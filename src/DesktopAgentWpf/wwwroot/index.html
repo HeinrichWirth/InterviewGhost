@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InterviewGhost</title>
+  <link rel="stylesheet" href="style.css?v=13" />
+</head>
+<body>
+  <div id="screenStage">
+    <img id="screenImage" alt="Screen stream" />
+  </div>
+  <div id="moveOverlay" class="hidden"></div>
+  <button id="btnMove" class="floating secondary">Move: OFF</button>
+  <button id="btnColor" class="floating secondary">Theme: Dark</button>
+  <div id="app">
+    <header>
+      <h1>InterviewGhost</h1>
+      <div id="connectionStatus" class="status">Disconnected</div>
+    </header>
+
+    <div class="card">
+      <div class="buttons">
+        <button id="btnStart">Start</button>
+        <button id="btnStop" class="danger" disabled>Stop</button>
+        <button id="btnScreen" class="secondary">Screenshot</button>
+      </div>
+
+      <div class="row">
+        <textarea id="followupInput" placeholder="Follow-up to the answer..."></textarea>
+        <button id="btnFollowup" class="secondary">Follow up</button>
+      </div>
+
+      <div class="row memory">
+        <button id="btnClearMemory" class="secondary">Clear memory</button>
+        <span id="memoryCount" class="muted">Memory: 0</span>
+      </div>
+
+      <div id="recordingIndicator" class="hidden">Recording...</div>
+      <div id="statusMessage" class="muted"></div>
+    </div>
+
+    <div id="errorPanel" class="card error hidden">
+      <div id="errorMessage"></div>
+      <button id="btnRetry" class="secondary" style="margin-top: 10px;">Retry</button>
+    </div>
+
+    <div class="card">
+      <h2>Answer</h2>
+      <div id="answer"></div>
+    </div>
+
+    <div id="scrollSpacer"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.12/signalr.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+  <script type="module" src="app.js?v=13"></script>
+</body>
+</html>
