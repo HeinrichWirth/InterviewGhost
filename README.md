@@ -13,6 +13,7 @@ InterviewGhost is a **free**, desktop agent + phone UI that provides instant "co
 ---
 
 ## Video demo (Vision Model)
+Demo shows the vision model analyzing an algorithmic problem statement and generating a structured approach (key idea, steps, complexity), not just a raw answer.
 ▶️ **Watch:** [![Demo video](assets/InterviewGhost.jpeg)](https://youtu.be/Jhi_P9DzIt0)
 
 ---
